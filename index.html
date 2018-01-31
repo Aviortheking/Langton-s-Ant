@@ -1,0 +1,26 @@
+<html dir="ltr" lang="en-US">
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="resource://activity-stream/css/activity-stream.css">
+		<style>
+		table, th, td {
+			border: 1px solid black;
+			padding: 15px;
+		}
+		.ant {
+			background: red;
+		}
+		</style>
+		<script type="text/javascript" src="prgm.js"></script>
+	</head>
+	<body>
+		<div class="prgm">
+		</div>
+	</body>
+	<script>
+		prgm = Prgm;
+		AntElement = "test";
+		prgm.init(document.getElementsByClassName("prgm")[0], 10);
+		prgm.Ant.setAt(1,2);
+	</script>
+</html>
