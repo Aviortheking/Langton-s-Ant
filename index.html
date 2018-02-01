@@ -6,21 +6,35 @@
 		table, th, td {
 			border: 1px solid black;
 			padding: 15px;
+			
 		}
 		.ant {
-			background: red;
+			background: red !important;
+		}
+		.black {
+			background: black;
 		}
 		</style>
-		<script type="text/javascript" src="prgm.js"></script>
+		
 	</head>
 	<body>
 		<div class="prgm">
 		</div>
+		<button onclick="moving()" style="position: fixed;top: 0;">Move</button>
+		<input style="position: fixed;bottom: 0;" class="moves"/>
 	</body>
+	<script type="text/javascript" src="prgm.js"></script>
 	<script>
-		prgm = Prgm;
-		AntElement = "test";
-		prgm.init(document.getElementsByClassName("prgm")[0], 10);
-		prgm.Ant.setAt(1,2);
+		function moving() {
+			for (var i = document.getElementsByClassName("moves")[0].value - 1; i >= 0; i--) {
+				Prgm.Ant.move();
+			}
+		}
+		window.onload = function() {
+			stop = false;
+			Prgm.setElement("test");
+			Prgm.init(document.getElementsByClassName("prgm")[0], 250);
+			Prgm.Ant.setAt(50, 200);
+		};
 	</script>
 </html>
