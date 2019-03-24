@@ -14,19 +14,14 @@
 		.black {
 			background: black;
 		}
-		.hidden {
-			visibility: hidden;
-		}
 		</style>
 		
 	</head>
 	<body>
 		<div class="prgm">
-		    <input value="250" class="geninput"/>
-		    <button onclick="gen()">Generate</button>
 		</div>
-		<button class="hidden" onclick="moving()" style="position: fixed;top: 0;">Move</button>
-		<input style="position: fixed;bottom: 0;" class="moves hidden"/>
+		<button onclick="moving()" style="position: fixed;top: 0;">Move</button>
+		<input style="position: fixed;bottom: 0;" class="moves"/>
 	</body>
 	<script type="text/javascript" src="prgm.js"></script>
 	<script>
@@ -35,15 +30,11 @@
 				Prgm.Ant.move();
 			}
 		}
-		
-		function gen() {
-            Prgm.setElement("AntProgram");
-			document.getElementsByClassName("hidden")[0].classList.remove("hidden")
-			document.getElementsByClassName("hidden")[0].classList.remove("hidden")
-			square = document.getElementsByClassName("geninput")[0].value;
-			Prgm.init(document.getElementsByClassName("prgm")[0], square);
-			Prgm.Ant.setAt(Math.trunc(square/2), Math.trunc(square/2));
-
-		}
+		window.onload = function() {
+			stop = false;
+			Prgm.setElement("test");
+			Prgm.init(document.getElementsByClassName("prgm")[0], 250);
+			Prgm.Ant.setAt(50, 200);
+		};
 	</script>
 </html>
